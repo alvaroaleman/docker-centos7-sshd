@@ -1,3 +1,9 @@
+# 0.1.1
+
+Alvaro Aleman (1):
+
+* Add sudo to installed packages
+
 # 0.1.0
 
 Alvaro Aleman (6):

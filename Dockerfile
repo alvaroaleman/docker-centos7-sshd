@@ -5,7 +5,7 @@ RUN \
     yum update -y && \
 
     # Install openssh server
-    yum install openssh-server -y && \
+    yum install openssh-server sudo -y && \
 
     # Generate host keys
     ssh-keygen -q -f /etc/ssh/ssh_host_rsa_key -N '' -t rsa && \

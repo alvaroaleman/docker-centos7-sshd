@@ -1,6 +1,7 @@
 containername = centos7sshdtest
-imagename = backuppc:latest
+imagename = centos7sshdtest:test
 hostport = 4444
+registryimagename = alvaroaleman/centos7-sshd:latest
 
 clean:
 	- sudo docker kill $(containername)
@@ -9,8 +10,14 @@ clean:
 build:
 	sudo docker build -t $(imagename) .
 
-run: clean build
+pull:
+	sudo docker pull $(registryimagename)
+
+run: clean pull
+	sudo docker run -d -p $(hostport):22 --name $(containername) $(registryimagename)
+
+testrun: clean build
 	sudo docker run -d -p $(hostport):22 --name $(containername) $(imagename)
 
-enter: run
+enter: testrun
 	sudo docker exec -it $(containername) bash

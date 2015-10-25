@@ -14,7 +14,7 @@ pull:
 	sudo docker pull $(registryimagename)
 
 run: clean pull
-	sudo docker run -d -p $(hostport):22 --name $(containername) $(registryimagename)
+	sudo docker run -d --privileged -v /sys/fs/cgroup:/sys/fs/cgroup:ro -p $(hostport):22 --name $(containername) $(registryimagename)
 
 testrun: clean build
 	sudo docker run -d -p $(hostport):22 --name $(containername) $(imagename)

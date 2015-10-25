@@ -1,8 +1,8 @@
-# docker-centos7-sshd
+# docker-centos7-systemd-sshd
 
 ## Synopsis
 
-A simple testcontainer providing sshd on CentOS 7
+A container for infrastructure related testing containing systemd and providing sshd
 
 **Do __not__ use this in production, as the private key to access this container is publicly available!**
 

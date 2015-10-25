@@ -1,3 +1,9 @@
+# 0.2.0
+
+Alvaro Aleman (1):
+
+* Use systemd
+
 # 0.1.1
 
 Alvaro Aleman (1):
